@@ -13,6 +13,7 @@ const useStyles=makeStyles({
 const videoSelected=()=>{
 
     console.log("User selected a match. Redirecting...")
+    console.log(id);
 }
 
 const LOLEvents=()=>{
@@ -72,12 +73,12 @@ const LOLEvents=()=>{
                 const { startTime,match }=eventData;
                 //console.log(match)
                 const { teams, id }=match;
-                //console.log(teams);
+                console.log(id);
                 const { name:nameOne, image:imageOne}=teams[0];
                 const { name:nameTwo, image:imageTwo}=teams[1];
                 return (
                         <Grid item xs={12} spacing={6}>
-                            <Button onClick={videoSelected}>
+                            <Button onClick={videoSelected(id)}>
                             <div><Typography align="center">{startTime}</Typography></div>
                                 <Typography align="center">
                                     <img src={imageOne} alt="new" width="10%" height="10%"/>  {nameOne} vs {nameTwo}  <img src={imageTwo} alt="new" width="10%" height="10%"/>  
